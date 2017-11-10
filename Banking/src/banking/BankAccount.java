@@ -9,6 +9,7 @@ public class BankAccount {
         /*
         setname();
         */
+        
     }
     public BankAccount(double b){
         setname();

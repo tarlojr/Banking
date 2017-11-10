@@ -72,6 +72,7 @@ public class BankingMain {
         }
         else if(x == 3){
             CheckingAccount b2 = new CheckingAccount(bal1, name);
+            b2.setbal(bal1);
             b2.withdraw();
             System.out.println(b2.toString());
             System.out.println(b2.balance());
@@ -80,7 +81,9 @@ public class BankingMain {
         }
         else if(x == 4){
             SavingsAccount b3 = new SavingsAccount();
+            b3.setbal(bal1);
             b3.Sim();
+            bal1 = b3.getbal();
         }
         else if(x == 5){
             System.out.println();
