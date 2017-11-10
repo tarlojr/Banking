@@ -6,15 +6,12 @@ public class BankAccount {
     private double bal;
     private String x;
     public BankAccount(){
-        System.out.println("Enter name");
-        Scanner s1 = new Scanner(System.in);
-        String value = s1.nextLine();
-        name = value;
+        /*
+        setname();
+        */
     }
     public BankAccount(double b){
-        System.out.println("Enter name");
-        Scanner s1 = new Scanner(System.in);
-        name = s1.nextLine();
+        setname();
         bal = b;
     }
     public BankAccount(String n, double b){ //takes the imputs form the main
@@ -26,6 +23,7 @@ public class BankAccount {
         return x;
     }
     public BankAccount(String n){ //sets the defult bal to 0
+        name = n;
         bal = 0.00;
     }
     public void Deposit(){ //creates a scanner to let you choose how much you want to deposit
@@ -61,5 +59,13 @@ public class BankAccount {
         bal = 0;
         bal = d;
         return bal;
+    }
+    private void setname(){
+        System.out.println("Enter name");
+        Scanner s1 = new Scanner(System.in);
+        name = s1.nextLine();
+    }
+    public void setname(String n){
+        name = n;
     }
 }

@@ -6,8 +6,9 @@ public class CheckingAccount extends BankAccount{
     private double value;
     private String ts = "";
     private String CheckID = "";
-    public CheckingAccount(double b){
+    public CheckingAccount(double b, String n){
         super.Deposit(b);
+        super.setname(n);
         CheckGen();
     }
     public void ServiceCharge(){

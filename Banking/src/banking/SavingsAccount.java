@@ -4,8 +4,8 @@ import java.util.Scanner;
 public class SavingsAccount extends BankAccount{
     private double Rate;
     private double M;//amount of money you want to sim intrest to
-    public SavingsAccount(double d){
-        d = M;
+    private double b1;
+    public SavingsAccount(){
         
     }
     public void IntrestRate(){
@@ -13,8 +13,14 @@ public class SavingsAccount extends BankAccount{
         System.out.println("What is your desired intrest rate");
         Rate = s1.nextDouble();
     }
-    public void Sim(double m){
-        
+    public void Sim(){
+        Scanner s1 = new Scanner(System.in);
+        System.out.println("what amount would you like to sim to?");
+        M = s1.nextDouble();
+        b1 = super.getbal();
+        if(super.getbal()<b1+M){
+            
+        }
     }
     public String ToString(){
         String y = "";
