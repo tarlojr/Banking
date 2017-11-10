@@ -80,7 +80,7 @@ public class BankingMain {
         }
         else if(x == 4){
             SavingsAccount b3 = new SavingsAccount();
-            b3.IntrestRate();
+            b3.Sim();
         }
         else if(x == 5){
             System.out.println();
