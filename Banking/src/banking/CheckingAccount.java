@@ -23,7 +23,7 @@ public class CheckingAccount extends BankAccount{
         value = s1.nextDouble();
         ServiceCharge();
         super.withdraw(value+Charge);
-        if(getbal()<0){
+        if(super.getbal()<0){
             overdraft();
         }
     }
