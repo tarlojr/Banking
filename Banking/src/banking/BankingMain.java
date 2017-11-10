@@ -39,10 +39,10 @@ public class BankingMain {
         System.out.println(ip3.ToString());
         */
         String name = "";
-        double bal;
+        double bal1;
         BankAccount b1 = new BankAccount(5000);
         name = b1.getname();
-        bal = b1.getbal();
+        bal1 = b1.getbal();
         System.out.println();
         System.out.println("you currently have $"+b1.getbal()+" in your account right now what would you like to do?");
         boolean t = true;
@@ -51,33 +51,42 @@ public class BankingMain {
         System.out.println("2). Deposit");
         System.out.println("3). Write Checks");
         System.out.println("4). Simulate the time to earn $500 in intrest");
-        System.out.println("5). Exit");
+        System.out.println("5). See your current balance");
+        System.out.println("6). Exit");
         
         int x;
         Scanner s2 = new Scanner(System.in);
         try{
         x = s2.nextInt();
         if(x == 1){
-            double c;
-            BankAccount b2 = new BankAccount(name, bal);
-            b2.withdraw();
-            System.out.println(b2.ToString());
-            bal = b2.getbal();
+            b1.setbal(bal1);
+            b1.withdraw();
+            System.out.println(b1.ToString());
+            bal1 = b1.getbal();
         }
         else if(x == 2){
-            BankAccount b3 = new BankAccount(name, bal);
-            b3.Deposit();
-            System.out.println(b3.ToString());
-            bal = b3.getbal();
+            b1.setbal(bal1);
+            b1.Deposit();
+            System.out.println(b1.ToString());
+            bal1 = b1.getbal();
         }
         else if(x == 3){
-            CheckingAccount b4 = new CheckingAccount();
-            System.out.println(b4.toString());
+            CheckingAccount b2 = new CheckingAccount(bal1);
+            b2.withdraw();
+            System.out.println(b2.toString());
+            System.out.println(b2.balance());
+            bal1 = b2.getbal();
+            
         }
         else if(x == 4){
-            SavingsAccount b5 = new SavingsAccount(500);
+            SavingsAccount b3 = new SavingsAccount(500);
         }
         else if(x == 5){
+            System.out.println();
+            System.out.println(bal1);
+            System.out.println();
+        }
+        else if(x == 6){
             t = false;
         }
         else{

@@ -5,7 +5,7 @@ public class SavingsAccount extends BankAccount{
     private double Rate;
     private double M;//amount of money you want to sim intrest to
     public SavingsAccount(double d){
-        
+        d = M;
         
     }
     public void IntrestRate(){
@@ -14,8 +14,7 @@ public class SavingsAccount extends BankAccount{
         Rate = s1.nextDouble();
     }
     public void Sim(double m){
-        double bal;
-        bal = super.getbal();
+        
     }
     public String ToString(){
         String y = "";

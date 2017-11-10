@@ -6,8 +6,9 @@ public class CheckingAccount extends BankAccount{
     private double value;
     private String ts = "";
     private String CheckID = "";
-    public CheckingAccount(){
-        
+    public CheckingAccount(double b){
+        super.Deposit(b);
+        CheckGen();
     }
     public void ServiceCharge(){
         Scanner s1 = new Scanner(System.in);
@@ -17,7 +18,7 @@ public class CheckingAccount extends BankAccount{
     @Override
     public void withdraw(){
         Scanner s1 = new Scanner(System.in);
-        System.out.println("how much would you like to withdraw?");
+        System.out.println("how much would you like to make the check worth?");
         value = s1.nextDouble();
         ServiceCharge();
         super.withdraw(value+Charge);
@@ -33,7 +34,7 @@ public class CheckingAccount extends BankAccount{
         ts += super.getname()+"\n"+"$"+(Charge+value)+"\n"+"Check Id : "+CheckID;
         return ts;
     }
-    public void CheckGen(){
+    private void CheckGen(){
         int x = (int)(Math.random()*9);
         int t = (int)(Math.random()*9);
         int y = (int)(Math.random()*9);
@@ -41,5 +42,11 @@ public class CheckingAccount extends BankAccount{
         int i = (int)(Math.random()*9);
         int o = (int)(Math.random()*9);
         CheckID = x+""+t+""+y+""+u+""+i+""+o+"";
+    }
+    public String balance(){
+        String balance = "";
+        balance = "you currently have $"+super.getbal()+" left";
+        System.out.println();
+        return balance;
     }
 }

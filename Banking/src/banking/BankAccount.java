@@ -45,9 +45,11 @@ public class BankAccount {
     }
     public void withdraw(double w){ //lets you take out desired amount and tells you if you took out to much
         bal = bal-w;
+        /*
         if(bal<0){
             System.out.println("the funds where insufficent");
         }
+        */
     }
     public String getname(){
         return name;
@@ -55,5 +57,9 @@ public class BankAccount {
     public double getbal(){ //lets you pull the current bal
         return bal;
     }
-    
+    public double setbal(double d){ //its 1 am i cant find a way around this
+        bal = 0;
+        bal = d;
+        return bal;
+    }
 }
